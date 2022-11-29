@@ -20,7 +20,7 @@
         >
           <!-- graphic -->
 
-          <router-link :to="`/`">
+          <a href="/">
             <button
               class="w-[35px] h-[35px] absolute left-0 ml-5 mt-2 bg-box rounded-full items-center justify-center"
             >
@@ -41,7 +41,7 @@
                 ></path>
               </svg>
             </button>
-          </router-link>
+          </a>
 
           <h1 class="text-white text-[32px] m-w-[575px]">
             {{ post.title }}
@@ -274,25 +274,31 @@
       <div
         class="flex w-[100%] relative flex-col justify-center m-w-[738px] items-left"
       >
-        <router-link :key="$route.path" :to="`/post/${post._id}`">
+        <a href="/post/${post._id}">
           <div
             @click="reloadPage"
             class="flex flex-row h-auto w-[100%] 2xl:w-[75%] mt-10 space-x-4 justify-center relative flex-wrap items-left"
           >
-            <PostCard v-for="(post, i) in posts" :key="i" :post="post" />
+            <PostCard
+              v-for="(post, i) in posts"
+              :key="i"
+              :post="post"
+              @click="reloadPage"
+            />
           </div>
-        </router-link>
+        </a>
       </div>
       <div
         class="mb-10 mt-2 w-[100%] h-[auto] break-words flex flex-row text-left items-center justify-center m-w-[738px] whitespace-pre-line"
       >
-        <router-link :to="`/`">
+        <a href="/" exact>
           <button
+            onclick="reloadPage"
             class="text-white text-[14px] bg-[#715AD0] w-[133px] h-[40px] rounded-[500px]"
           >
             View More
           </button>
-        </router-link>
+        </a>
       </div>
 
       <div class="mt-[200px]">
@@ -348,6 +354,10 @@ export default {
   },
 
   methods: {
+    reloadPage() {
+      document.location.reload();
+      console.log("reloaded");
+    },
     shareOnFB() {
       const link = encodeURI(window.location.href);
       const msg = encodeURIComponent("Palmswap Article: ");
@@ -393,6 +403,7 @@ export default {
     const posts = computed(() => {
       return store.getters.posts;
     });
+    console.log(posts, "posts");
 
     onMounted(() => {
       const query = '*[_type == "post" && _id == $id][0]';
@@ -400,7 +411,9 @@ export default {
 
       sanity.fetch(query, params).then((data) => {
         post.value = data;
-      });
+        console.log(data, "data");
+      }),
+        3000;
 
       store.dispatch("FetchPosts", 3);
       const query2 = '[_type == "post"] [0..2] | order(_createdAt desc)';

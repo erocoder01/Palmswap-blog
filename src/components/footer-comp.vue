@@ -30,14 +30,29 @@
         <div class="about flex flex-col text-left mt-10 w-[25%] md:w-auto">
           <h3 class="text-[20px] text-white leading-6 my-2">Blog</h3>
           <p
-            @click="filterInFotter"
-            class="cursor-pointerub text-graytext text-[14px]"
+            v-on:click="featuredButtonInFooter"
+            class="cursor-pointer text-graytext text-[14px]"
           >
             Featured
           </p>
-          <p class="text-graytext text-[14px]">News</p>
-          <p class="text-graytext text-[14px]">Team Reports</p>
-          <p class="text-graytext text-[14px]">Announcement</p>
+          <p
+            v-on:click="AnnouncementButtonInFooter"
+            class="cursor-pointer text-graytext text-[14px]"
+          >
+            Announcement
+          </p>
+          <p
+            v-on:click="teamreportButtonInFooter"
+            class="cursor-pointertext-graytext text-[14px]"
+          >
+            Team Reports
+          </p>
+          <p
+            v-on:click="palmButtonInFooter"
+            class="cursor-pointer text-graytext text-[14px]"
+          >
+            Palm
+          </p>
         </div>
         <div class="about flex flex-col text-left mt-10 w-[25%] md:w-auto">
           <h3 class="text-[20px] text-white leading-6 my-2">Support</h3>
@@ -105,23 +120,52 @@
 </template>
 
 <script>
-import router from "@/router";
-
 export default {
-  props: {
-    method: { type: Function },
-  },
-  mounted() {
-    // Use the parent function directly here
-    this.method();
+  data() {
+    return {
+      search: "",
+      category: "",
+    };
   },
 
   methods: {
-    filterInFotter() {
-      //check if we are in home component
-      let url = window.location.href;
-      if (url !== "http://localhost:8080/") {
-        router.push("http://localhost:8080/");
+    featuredButtonInFooter() {
+      if (this.category.length === 0) {
+        this.$emit("featuredButtoninFooter", (this.search = "featured"));
+      } else {
+        this.$emit("featuredButtoninFooter", (this.search = ""));
+        this.$emit("featuredButtoninFooter", (this.search = "featured"));
+      }
+    },
+    AnnouncementButtonInFooter() {
+      if (this.category.length === 0) {
+        this.$emit(
+          "AnnouncementButtoninFooter",
+          (this.search = "announcement")
+        );
+      } else {
+        this.$emit("AnnouncementButtoninFooter", (this.search = ""));
+        this.$emit(
+          "AnnouncementButtoninFooter",
+          (this.search = "announcement")
+        );
+      }
+    },
+    teamreportButtonInFooter() {
+      if (this.category.length === 0) {
+        this.$emit("teamreportButtoninFooter", (this.search = "teamreport"));
+      } else {
+        this.$emit("teamreportButtoninFooter", (this.search = ""));
+        this.$emit("teamreportButtoninFooter", (this.search = "teamreport"));
+      }
+    },
+
+    palmButtonInFooter() {
+      if (this.category.length === 0) {
+        this.$emit("palmButtonInFooter", (this.search = "palm"));
+      } else {
+        this.$emit("palmButtonInFooter", (this.search = ""));
+        this.$emit("palmButtonInFooter", (this.search = "palm"));
       }
     },
   },

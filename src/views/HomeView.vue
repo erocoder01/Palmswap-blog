@@ -77,7 +77,7 @@
 
       <div class="flex justify-items-center w-full">
         <div
-          class="flex flex-row h-auto sm:w-[90%] md:w-[1118px] mt-10 md:justify-start justify-center flex-wrap mx-auto"
+          class="flex flex-row h-auto sm:w-[90%] md:w-[1118px] mt-10 md:justify-start sm:justify-center flex-wrap mx-auto"
         >
           <PostCard v-for="(post, i) in filterPosts" :key="i" :post="post" />
 
@@ -91,7 +91,7 @@
         </div>
       </div>
 
-      <footer-comp :method="activeButton" />
+      <footer-comp v-on:featuredButtoninFooter="updateSearch($event)"  />
     </section>
   </main>
 </template>
@@ -135,9 +135,11 @@ export default {
   },
 
   methods: {
-    //share on socials
-
     //active color
+
+    updateSearch(newSearch) {
+      this.search = newSearch;
+    },
 
     activeButton() {
       const all = document.getElementById("all");
@@ -192,6 +194,7 @@ export default {
         this.search = "";
       }
     },
+
     featuredButton() {
       if (this.category.length === 0) {
         this.search = "featured";
