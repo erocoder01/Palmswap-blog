@@ -91,7 +91,7 @@
         </div>
       </div>
 
-      <footer-comp v-on:featuredButtoninFooter="updateSearch($event)"  />
+      <footer-comp v-on:buttonInFooter="updateSearch($event), activeButton()" />
     </section>
   </main>
 </template>

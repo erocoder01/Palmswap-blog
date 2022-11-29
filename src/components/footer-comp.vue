@@ -1,8 +1,6 @@
 <template>
   <section>
-    <div
-      class="line w-[90%] 2xl:w-[75%] mt-10 h-[2px] bg-box ml-auto mr-auto"
-    ></div>
+    <div class="line w-[100%] mt-10 h-[2px] bg-box ml-auto mr-auto"></div>
     <div class="flex-col flex">
       <div
         class="h-auto w-full flex flex-row bg-bg justify-items-centergrid grid-cols-2 flex-wrap gap-4 place-content-evenly"
@@ -43,7 +41,7 @@
           </p>
           <p
             v-on:click="teamreportButtonInFooter"
-            class="cursor-pointertext-graytext text-[14px]"
+            class="cursor-pointer text-graytext text-[14px]"
           >
             Team Reports
           </p>
@@ -130,42 +128,40 @@ export default {
 
   methods: {
     featuredButtonInFooter() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       if (this.category.length === 0) {
-        this.$emit("featuredButtoninFooter", (this.search = "featured"));
+        this.$emit("buttonInFooter", (this.search = "featured"));
       } else {
-        this.$emit("featuredButtoninFooter", (this.search = ""));
-        this.$emit("featuredButtoninFooter", (this.search = "featured"));
+        this.$emit("buttonInFooter", (this.search = ""));
+        this.$emit("buttonInFooter", (this.search = "featured"));
       }
     },
     AnnouncementButtonInFooter() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       if (this.category.length === 0) {
-        this.$emit(
-          "AnnouncementButtoninFooter",
-          (this.search = "announcement")
-        );
+        this.$emit("buttonInFooter", (this.search = "announcement"));
       } else {
-        this.$emit("AnnouncementButtoninFooter", (this.search = ""));
-        this.$emit(
-          "AnnouncementButtoninFooter",
-          (this.search = "announcement")
-        );
+        this.$emit("buttonInFooter", (this.search = ""));
+        this.$emit("buttonInFooter", (this.search = "announcement"));
       }
     },
     teamreportButtonInFooter() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       if (this.category.length === 0) {
-        this.$emit("teamreportButtoninFooter", (this.search = "teamreport"));
+        this.$emit("buttonInFooter", (this.search = "teamreport"));
       } else {
-        this.$emit("teamreportButtoninFooter", (this.search = ""));
-        this.$emit("teamreportButtoninFooter", (this.search = "teamreport"));
+        this.$emit("buttonInFooter", (this.search = ""));
+        this.$emit("buttonInFooter", (this.search = "teamreport"));
       }
     },
 
     palmButtonInFooter() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
       if (this.category.length === 0) {
-        this.$emit("palmButtonInFooter", (this.search = "palm"));
+        this.$emit("buttonInFooter", (this.search = "palm"));
       } else {
-        this.$emit("palmButtonInFooter", (this.search = ""));
-        this.$emit("palmButtonInFooter", (this.search = "palm"));
+        this.$emit("buttonInFooter", (this.search = ""));
+        this.$emit("buttonInFooter", (this.search = "palm"));
       }
     },
   },
