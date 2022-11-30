@@ -272,12 +272,12 @@
       </div>
 
       <div
-        class="flex w-[100%] relative flex-col justify-center m-w-[738px] items-left"
+        class="flex w-[100%] relative flex-col justify-center m-w-[738px] items-center"
       >
         <a href="/post/${post._id}">
           <div
             @click="reloadPage"
-            class="flex flex-row h-auto w-[100%] 2xl:w-[75%] mt-10 space-x-4 justify-center relative flex-wrap items-left"
+            class="flex flex-row h-auto w-[100%] mt-10 space-x-4 justify-center relative flex-wrap items-left"
           >
             <PostCard
               v-for="(post, i) in posts"

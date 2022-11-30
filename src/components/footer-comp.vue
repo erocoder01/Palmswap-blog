@@ -19,7 +19,9 @@
           <a href="/">
             <p class="text-graytext text-[14px]">Blog</p>
           </a>
-          <p class="text-graytext text-[14px]">Write Us</p>
+          <a href="mailto:office@palmswap.org">
+            <p class="text-graytext text-[14px]">Write Us</p>
+          </a>
           <p class="text-graytext text-[14px]">Terms of Service</p>
           <p class="text-graytext text-[14px]">Privacy Policy</p>
           <p class="text-graytext text-[14px]">Referral Agreement</p>
@@ -67,7 +69,10 @@
           <a href="https://docs.palmswap.org/roadmap" target="_blank">
             <p class="text-graytext text-[14px]">Roadmap</p>
           </a>
-          <p class="text-graytext text-[14px]">FAQ</p>
+
+          <a href="https://palmswap.org/faq" target="_blank">
+            <p class="text-graytext text-[14px]">FAQ</p>
+          </a>
         </div>
         <div class="about flex flex-col text-left mt-10 w-[25%] md:w-auto">
           <h3 class="text-[20px] text-white leading-6 my-2">Products</h3>
@@ -118,6 +123,8 @@
 </template>
 
 <script>
+import router from "@/router";
+
 export default {
   data() {
     return {
@@ -131,6 +138,7 @@ export default {
       window.scrollTo({ top: 0, behavior: "smooth" });
       if (this.category.length === 0) {
         this.$emit("buttonInFooter", (this.search = "featured"));
+        router.push({ path: "/" });
       } else {
         this.$emit("buttonInFooter", (this.search = ""));
         this.$emit("buttonInFooter", (this.search = "featured"));

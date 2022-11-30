@@ -70,7 +70,7 @@
 
         <div class="flex flex-row w-[100%] mt-10 h-auto">
           <div
-            class="line md:w-[1086px] w-[90%] 2xl:w-[75%] h-[2px] bg-box ml-auto mr-auto"
+            class="line md:w-[1086px] w-[90%] 2xl:w-[57%] h-[2px] bg-box ml-auto mr-auto"
           ></div>
         </div>
       </div>
