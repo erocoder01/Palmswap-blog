@@ -194,7 +194,7 @@
           class="w-[100%] md:w-[738px] flex ml-auto mr-auto whitespace-pre-line break-words"
         >
           <div
-            class="text-left mt-10 w-[100%] h-[auto] break-words flex flex-col px-6 md:px-0 text-left justify-items-start m-w-[738px]"
+            class="text-left mt-10 w-[100%] h-[auto] break-words flex flex-col px-6 md:px-0 text-[18px] text-left justify-items-start m-w-[738px]"
           >
             <SanityBlocks :blocks="post.content" class="spantest" />
           </div>
@@ -207,7 +207,7 @@
         class="mt-10 w-[100%] h-[auto] flex flex-row items-center justify-center m-w-[738px]"
       >
         <div
-          class="flex flex-col items-center place-content-evenly justify-center text-center w-[422px] h-[165px] rounded-[25px] border-box border-2"
+          class="flex flex-col items-center place-content-evenly justify-center text-center w-[380px] h-[149px] rounded-[25px] border-box border-2"
         >
           <p class="font-bold text-[24px] leading-6 mb-3">
             Share on Social Media

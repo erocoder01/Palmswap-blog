@@ -8,7 +8,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/post/:id",
+    path: "/:id",
     name: "post",
     component: () => import("../views/post/_id.vue"),
     props: true,

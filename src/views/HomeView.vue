@@ -1,9 +1,12 @@
 <template>
   <main class="home">
     <section
-      class="flex flex-col w-full justify-center h-auto align-center mt-10"
+      class="flex flex-col w-full justify-center h-auto align-center z-10"
     >
-      <div class="flex-col w-full justify-center items-center align-center">
+      <Navbar />
+      <div
+        class="flex-col w-full justify-center items-center align-center mt-10"
+      >
         <div class="text-center">
           <h1 class="text-[32px]">Blog</h1>
           <span class="text-graytext">Read the latest updates.</span>
@@ -82,7 +85,7 @@
           <PostCard v-for="(post, i) in filterPosts" :key="i" :post="post" />
 
           <button
-            v-if="$store.state.total_posts > posts.length"
+            v-if="$store.state.total_posts > $store.state.posts.length"
             @click="$store.dispatch('LoadMorePosts', 10)"
             class="btn w-[352px] h-[393px] rounded-[25px] bg-[#191B1F] ml-[5px] text-[#6C7284]"
           >
@@ -100,6 +103,7 @@
 import { onMounted, onUnmounted, ref, computed } from "vue";
 import { useStore } from "vuex";
 import sanity from "../client";
+import Navbar from "../components/Navbar.vue";
 import FooterComp from "../components/footer-comp.vue";
 import PostCard from "../components/PostCard.vue";
 
@@ -107,6 +111,7 @@ export default {
   components: {
     PostCard,
     FooterComp,
+    Navbar,
   },
 
   data() {
@@ -202,6 +207,7 @@ export default {
         this.search = "";
         this.search = "featured";
       }
+      console.log(this.filterPosts.length);
     },
     announcementButton() {
       if (this.category.length === 0) {

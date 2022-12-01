@@ -1,6 +1,6 @@
 <template>
   <div class="w-[352px] md:mx-[10px] h-[391px] z-10">
-    <router-link :key="$route.path" :to="`/post/${post._id}`">
+    <router-link :key="$route.path" :to="`/${post._id}`">
       <div class="flex-1 flex flex-col inline-block inline w-full">
         <img
           v-if="post.image"

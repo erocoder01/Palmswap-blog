@@ -7,7 +7,7 @@
       >
         <div class="about flex flex-col text-left mt-10 w-[25%] md:w-auto">
           <h3 class="text-[20px] text-white leading-6 my-2">About</h3>
-          <p class="text-graytext text-[14px]">About Us</p>
+
           <a href="https://docs.palmswap.org" target="_blank">
             <p class="text-graytext text-[14px]">Documentation</p>
           </a>
@@ -22,10 +22,18 @@
           <a href="mailto:office@palmswap.org">
             <p class="text-graytext text-[14px]">Write Us</p>
           </a>
-          <p class="text-graytext text-[14px]">Terms of Service</p>
-          <p class="text-graytext text-[14px]">Privacy Policy</p>
-          <p class="text-graytext text-[14px]">Referral Agreement</p>
-          <p class="text-graytext text-[14px]">Cookie preferences</p>
+
+          <a href="https://palmswap.org/terms_of_use">
+            <p class="text-graytext text-[14px]">Terms of Service</p>
+          </a>
+
+          <a href="https://palmswap.org/privacy" target="_blank">
+            <p class="text-graytext text-[14px]">Privacy Policy</p>
+          </a>
+
+          <a href="https://palmswap.org/referral_agreement" target="_blank">
+            <p class="text-graytext text-[14px]">Referral Agreement</p>
+          </a>
         </div>
         <div class="about flex flex-col text-left mt-10 w-[25%] md:w-auto">
           <h3 class="text-[20px] text-white leading-6 my-2">Blog</h3>
@@ -56,8 +64,10 @@
         </div>
         <div class="about flex flex-col text-left mt-10 w-[25%] md:w-auto">
           <h3 class="text-[20px] text-white leading-6 my-2">Support</h3>
-          <p class="text-graytext text-[14px]">Support Center</p>
-          <p class="text-graytext text-[14px]">Feedback</p>
+
+          <a href="https://palmswap.canny.io/" target="_blank">
+            <p class="text-graytext text-[14px]">Feedback</p>
+          </a>
           <a
             href="https://docs.palmswap.org/protocol/exchange/fee"
             target="_blank"
@@ -65,7 +75,6 @@
             <p class="text-graytext text-[14px]">Fees</p>
           </a>
 
-          <p class="text-graytext text-[14px]">Trading Rules</p>
           <a href="https://docs.palmswap.org/roadmap" target="_blank">
             <p class="text-graytext text-[14px]">Roadmap</p>
           </a>
@@ -82,10 +91,16 @@
           <a href="https://perp.palmswap.org/" target="_blank">
             <p class="text-graytext text-[14px]">Hybrid Exchange</p>
           </a>
-          <p class="text-graytext text-[14px]">Palmswap Launchpad</p>
-          <p class="text-graytext text-[14px]">Staking</p>
-          <p class="text-graytext text-[14px]">Farming</p>
-          <p class="text-graytext text-[14px]">Listing Applications</p>
+
+          <a href="https://app.palmswap.org/launchpad" target="_blank">
+            <p class="text-graytext text-[14px]">Palmswap Launchpad</p>
+          </a>
+          <a href="https://app.palmswap.org/earn/staking" target="_blank">
+            <p class="text-graytext text-[14px]">Staking</p>
+          </a>
+          <a href="https://app.palmswap.org/earn/farm" target="_blank">
+            <p class="text-graytext text-[14px]">Farming</p>
+          </a>
         </div>
         <div class="about flex flex-col text-left mt-10 w-[25%] md:w-auto">
           <h3 class="text-[20px] text-white leading-6 my-2">Trade</h3>
