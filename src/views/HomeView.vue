@@ -86,7 +86,7 @@
 
           <button
             v-if="$store.state.total_posts > $store.state.posts.length"
-            @click="$store.dispatch('LoadMorePosts', 10)"
+            @click="$store.dispatch('LoadMorePosts', 11)"
             class="btn w-[352px] h-[393px] rounded-[25px] bg-[#191B1F] ml-[5px] text-[#6C7284]"
           >
             Load More
@@ -237,13 +237,14 @@ export default {
 
   setup() {
     const subscription = ref(null);
+
     const store = useStore();
     const posts = computed(() => {
       return store.getters.posts;
     });
 
     onMounted(() => {
-      store.dispatch("FetchPosts", 4);
+      store.dispatch("FetchPosts", 11);
       const query = '[_type == "post"]';
 
       subscription.value = sanity.listen(query).subscribe((update) => {

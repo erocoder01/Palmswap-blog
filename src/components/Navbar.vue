@@ -38,6 +38,13 @@
               Trade
             </p>
           </a>
+          <a href="https://palmswap.org/" target="_blank">
+            <p
+              class="sm:flex md:hidden px-3 py-2 text-[#6C7284] cursor-pointer text-[14px] hover:text-white"
+            >
+              Home
+            </p>
+          </a>
 
           <a
             href="https://testnet.palmswap.org/portfolio/overview"
@@ -201,11 +208,6 @@
             </p>
           </a>
 
-          <p
-            class="sm:hidden md:flex whitespace-nowrap px-3 py-2 text-[#6C7284] cursor-pointer text-[14px] hover:text-white"
-          >
-            Rewards 🔥
-          </p>
           <div
             @click="toggleMoreDropdown"
             id="earn"

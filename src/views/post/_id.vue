@@ -2,6 +2,7 @@
   <main class="post-page">
     <section v-if="post">
       <!-- Katgorie -->
+      <Navbar />
       <div class="category w-full items-center flex flex-row">
         <button
           class="flex text-[12px] content-center flex-row justify-center flex-wrap text-active-text py-2 px-6 bg-active-bg text-center rounded-[500px] whitespace-nowrap my-10 mx-auto"
@@ -345,12 +346,14 @@ import sanity from "../../client";
 import { createURL, FormatDate } from "@/components/utils";
 import { useStore } from "vuex";
 import { SanityBlocks } from "sanity-blocks-vue-component";
+import Navbar from "../../components/Navbar.vue";
 
 export default {
   components: {
     PostCard,
     FooterComp,
     SanityBlocks,
+    Navbar,
   },
 
   methods: {

@@ -8,11 +8,16 @@
           class="w-[352px] h-[198px] rounded-[25px]"
         />
 
-        <p
-          class="text-[14px] text-[#735BD3] text-left leading-[1.5rem] mt-2 mb-2"
-        >
-          {{ post.category }}
-        </p>
+        <div class="flex flex row w-full items-center justify-between">
+          <p
+            class="text-[14px] text-[#735BD3] text-left leading-[1.5rem] mt-2 mb-2"
+          >
+            {{ post.category }}
+          </p>
+          <p class="text-graytext text-[14px] leading-6">
+            {{ FormatDateOnPostCard(post._createdAt) }}
+          </p>
+        </div>
         <h3
           class="text-white leading-[1.4rem] text-[16px] mb-2 w-auto text-left h-auto break-normal"
         >
@@ -28,7 +33,7 @@
 </template>
 
 <script>
-import { FormatDate, createURL } from "../components/utils";
+import { FormatDateOnPostCard, createURL } from "../components/utils";
 export default {
   props: {
     post: {
@@ -39,7 +44,7 @@ export default {
 
   setup() {
     return {
-      FormatDate,
+      FormatDateOnPostCard,
       createURL,
     };
   },
