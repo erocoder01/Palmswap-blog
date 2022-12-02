@@ -359,17 +359,12 @@ export default {
   methods: {
     reloadPage() {
       document.location.reload();
-      console.log("reloaded");
     },
     shareOnFB() {
       const link = encodeURI(window.location.href);
-      const msg = encodeURIComponent("Palmswap Article: ");
-      const title = this.post.title;
-
-      console.log(link, msg, title);
 
       const fb = document.querySelector(".facebook");
-      console.log("fb", fb);
+
       fb.href = `https://www.facebook.com/share.php?u=${link}`;
     },
     shareOnTwitter() {
@@ -406,7 +401,6 @@ export default {
     const posts = computed(() => {
       return store.getters.posts;
     });
-    console.log(posts, "posts");
 
     onMounted(() => {
       const query = '*[_type == "post" && _id == $id][0]';
@@ -414,7 +408,6 @@ export default {
 
       sanity.fetch(query, params).then((data) => {
         post.value = data;
-        console.log(data, "data");
       }),
         3000;
 
@@ -424,13 +417,10 @@ export default {
       subscription.value = sanity.listen(query2).subscribe((update) => {
         switch (update.transition) {
           case "update":
-            console.log("Post updated", update);
             break;
           case "appear":
-            console.log("Post appeared", update);
             break;
           case "dissapear":
-            console.log("Post dissapeard", update);
             break;
         }
       });

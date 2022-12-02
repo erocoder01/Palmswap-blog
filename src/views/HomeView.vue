@@ -207,7 +207,6 @@ export default {
         this.search = "";
         this.search = "featured";
       }
-      console.log(this.filterPosts.length);
     },
     announcementButton() {
       if (this.category.length === 0) {
@@ -250,13 +249,10 @@ export default {
       subscription.value = sanity.listen(query).subscribe((update) => {
         switch (update.transition) {
           case "update":
-            console.log("Post updated", update);
             break;
           case "appear":
-            console.log("Post appeared", update);
             break;
           case "dissapear":
-            console.log("Post dissapeard", update);
             break;
         }
       });
